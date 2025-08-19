@@ -1,0 +1,28 @@
+html,
+body {
+    /* Assicurati che l'altezza sia al 100% */
+    height: 100%;
+
+    /* Rimuovi i margini predefiniti */
+    margin: 0;
+
+    /* Imposta Flexbox per il body */
+    display: flex;
+
+    /* Disposizione verticale */
+    flex-direction: column;
+}
+
+body {
+    /* Usa Flexbox per il layout del corpo */
+    display: flex;
+
+    /* Disposizione verticale */
+    flex-direction: column;
+
+}
+
+main {
+    /* Fai in modo che il main occupi tutto lo spazio disponibile tranne quello del footer */
+    flex: 1;
+}

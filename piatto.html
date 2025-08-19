@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All You Can Cook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="star_rating.css">
+    <link rel="stylesheet" href="heart.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css">
+
+
+
+    <style>
+        .modify-button {
+            float: right;
+            width: 100px;
+            --bs-btn-color: white;
+            --bs-btn-bg: #398378;
+            --bs-btn-border-color: #398378;
+            --bs-btn-hover-color: #398378;
+            --bs-btn-hover-bg: white;
+            --bs-btn-hover-border-color: #398378;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #398378;
+            --bs-btn-active-bg: #398378;
+            --bs-btn-active-border-color: #398378;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #398378;
+            --bs-btn-disabled-bg: #398378;
+            --bs-btn-disabled-border-color: #398378;
+        }
+
+        .heart_button {
+            float: right;
+
+            width: 100px;
+
+            --bs-btn-color: white;
+            --bs-btn-bg: #398378;
+            --bs-btn-border-color: #398378;
+            --bs-btn-hover-color: #398378;
+            --bs-btn-hover-bg: white;
+            --bs-btn-hover-border-color: #398378;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #398378;
+            --bs-btn-active-bg: #398378;
+            --bs-btn-active-border-color: #398378;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #398378;
+            --bs-btn-disabled-bg: #398378;
+            --bs-btn-disabled-border-color: #398378;
+        }
+
+        .heart_button label {
+            cursor: pointer;
+        }
+
+        .Title {
+            text-align: left;
+            margin-left: 305px;
+        }
+
+        .container {
+            width: 2000px;
+        }
+
+        .meal-title {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .list-group {
+            margin-top: 20px;
+        }
+
+        .list-group-item {
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+
+        .btn-video {
+            --bs-btn-color: #fff;
+            --bs-btn-bg: red;
+            --bs-btn-border-color: red;
+            --bs-btn-hover-color: #fff;
+            --bs-btn-hover-bg: red;
+            --bs-btn-hover-border-color: red;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: red;
+            --bs-btn-active-border-color: red;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #fff;
+            --bs-btn-disabled-bg: red;
+            --bs-btn-disabled-border-color: #red;
+        }
+
+        .card-img-top {
+            display: flex;
+            /* Centra orizzontalmente l'immagine */
+            /* Centra verticalmente l'immagine */
+            margin-top: 20px;
+            /* Aggiungi uno spazio sopra se necessario */
+            margin-bottom: 20px;
+            /* Aggiungi uno spazio sotto se necessario */
+            max-width: 500px;
+            /* Imposta una larghezza massima specifica */
+            width: 100%;
+            /* Fa sì che l'immagine si adatti alla larghezza del suo contenitore */
+            height: auto;
+            /* Mantiene le proporzioni corrette */
+        }
+
+        .Info-Ingredienti {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .Info-Title {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgb(221, 221, 221);
+            padding-bottom: 1rem;
+            --border-color__token-name: colors.consumption.body.standard.divider;
+            border-top-color: rgb(221, 221, 221);
+            border-right-color: rgb(221, 221, 221);
+            border-left-color: rgb(221, 221, 221);
+
+        }
+
+        .Info-Procedimento {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+
+        }
+
+        .Recensioni_totali {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+
+            margin-bottom: 50px;
+        }
+
+        .Recensione {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+
+            margin-bottom: 50px;
+        }
+
+        .Nota_personale {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+
+            margin-bottom: 50px;
+        }
+
+        svg {
+            float: right;
+        }
+
+        .form-recensione {
+            width: 1300px;
+            height: 280px;
+        }
+
+        .list-group-item_title {
+            margin-bottom: 0px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            margin-bottom: 20px;
+        }
+
+        .row_space {
+            margin-bottom: 20px;
+
+        }
+
+        .checkbox {
+            display: none;
+            /* Nascondi l'input checkbox */
+        }
+
+        .heartbox label {
+            cursor: pointer;
+        }
+
+        svg {
+            margin: 10px;
+        }
+
+        #heart-svg {
+            width: 58px;
+            height: 57px;
+        }
+
+        #heart-svg #heart {
+            transition: fill 0.3s ease;
+        }
+
+        #heart-svg #heart.liked {
+            fill: #E2264D;
+            /* Colore rosso per il cuore "preferito" */
+        }
+
+        .lista_recensioni {
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar {
+            margin-bottom: 45px;
+        }
+    </style>
+
+    <script src="signup.js"></script>
+    <!--Script per controllo dello stato del login-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (sessionStorage.getItem('isLoggedIn') === 'true') {
+                // Aggiungi una classe che attiva le animazioni
+                document.body.classList.add('user-logged-in');
+            }
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+    <!--navbar-->
+    <nav class="navbar-homepage">
+        <div class="header-container">
+            <!--logo-->
+            <a href="index.html">
+                <img src="logo-no-background.svg" alt="Logo" class="logo-img" id="logo">
+            </a>
+
+            <!--Barra di ricerca-->
+            <div class="search-bar-container">
+                <form class="d-flex" role="search" onsubmit="return cerca()">
+                    <input class="form-control search-input" type="search" id="query" placeholder="Search"
+                        aria-label="Cerca">
+                    <button class="btn btn-outline-success search-button" type="submit">Search</button>
+                </form>
+
+            </div>
+
+            <!--Script per gestire il login-->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Associa l'evento click alla funzione check_login
+                    document.getElementById('login-button').addEventListener('click', function () {
+                        check_login(); // Verifica se l'utente è loggato al clic del pulsante
+                    });
+                });
+            </script>
+
+            <!--DropDown Login-->
+            <div class="nav-item dropdown">
+                <button class="btn btn-primary login-button" id="login-button" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Login</button>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="display: none;"
+                    id="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="index.html">Home</a></li>
+                    <li><a class="dropdown-item" href="ricettario.html">Profilo</a></li>
+                    <li><a class="dropdown-item" href="Recensioni.html">Recensioni</a></li>
+                    <li><a class="dropdown-item" href="personal_note.html">Note Personali</a></li>
+                    <li><button class="btn dropdown-item" id="logout-button" type="button">Logout</button></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card mx-auto mt-4">
+                <div class="row g-0">
+                    <div class="col-md-4" style="padding: 10px;">
+                        <img class="card-img-top" id="card-img-top" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item list-group-item_title">
+                                <div class="row" style="text-align: left">
+                                    <div class="col-md-6" style="padding-left: 1%; ">
+                                        <h2 class="list-group-item meal-title" id="meal-title"
+                                            style="margin-left: 0px; padding-left:0; border-color: white;"> </h2>
+                                    </div>
+                                    <div class="col-md-6" style="text-align: left">
+                                        <!--PULSANTE LIKE-->
+                                        <div class="class_heart_button"> <input type="checkbox" class="checkbox"
+                                                id="checkbox" name="liked_button" />
+                                            <label for="checkbox" class="heart_button">
+
+                                                <svg id="heart-svg" viewBox="467 392 58 57"
+                                                    xmlns="http://www.w3.org/2000/svg" name="liked">
+
+                                                    <g id="Group" fill="none" fill-rule="evenodd"
+                                                        transform="translate(467 392)">
+                                                        <path
+                                                            d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
+                                                            id="heart" fill="#AAB8C2" />
+
+                                                        <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5"
+                                                            cy="29.5" r="1.5" />
+                                                        <g id="heartgroup7" opacity="0" transform="translate(7 6)">
+                                                            <circle id="heart1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+                                                            <circle id="heart2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+                                                        </g>
+                                                        <g id="heartgroup6" opacity="0" transform="translate(0 28)">
+                                                            <circle id="heart1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+                                                            <circle id="heart2" fill="#91D2FA" cx="3" cy="2" r="2" />
+                                                        </g>
+                                                        <g id="heartgroup3" opacity="0" transform="translate(52 28)">
+                                                            <circle id="heart2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+                                                            <circle id="heart1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+                                                        </g>
+                                                        <g id="heartgroup2" opacity="0" transform="translate(44 6)">
+                                                            <circle id="heart2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+                                                            <circle id="heart1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+                                                        </g>
+                                                        <g id="heartgroup5" opacity="0" transform="translate(14 50)">
+                                                            <circle id="heart1" fill="#91D2FA" cx="6" cy="5" r="2" />
+                                                            <circle id="heart2" fill="#91D2FA" cx="2" cy="2" r="2" />
+                                                        </g>
+                                                        <g id="heartgroup4" opacity="0" transform="translate(35 50)">
+                                                            <circle id="heart1" fill="#F48EA7" cx="6" cy="5" r="2" />
+                                                            <circle id="heart2" fill="#F48EA7" cx="2" cy="2" r="2" />
+                                                        </g>
+                                                        <g id="heartgroup1" opacity="0" transform="translate(24)">
+                                                            <circle id="heart1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+                                                            <circle id="heart2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+                                                        </g>
+
+                                                    </g>
+                                                </svg>
+
+                                            </label>
+                                        </div>
+                                    </div>
+                            </li>
+                            <!--Categoria-->
+                            <li class="list-group-item">
+                                <span>Category: </span>
+                                <span id="category"></span>
+                            </li>
+                            <!--Area-->
+                            <li class="list-group-item">
+                                <span>Area: </span>
+                                <span id="area"></span>
+                            </li>
+
+                            <!--Video-->
+                            <li class="list-group-item">
+                                <button type="button" class="btn btn-primary btn-video" id="video">Guarda il
+                                    video</button>
+                                <!--
+                                Font Awesome: Per il simbolo di youtubue, ho usato Font Awesome (<i class="fa-brands fa-youtube"></i>. 
+                                Devi includere il CDN di Font Awesome nel <head> del tuo documento. 
+                                Puoi usare il link che ho fornito o uno aggiornato se necessario.
+                                -->
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <!--Info sulla ricetta-->
+            <section class="Info-Ingredienti">
+                <h2 class="Info-Title">Ingredienti</h2>
+                <ul class="list_ingredients">
+                </ul>
+            </section>
+            <section class="Info-Procedimento">
+                <h2 class="Info-Title">Procedimento</h2>
+                <span id="instructions"></span>
+
+            </section>
+
+            <!--Tutte le recensioni-->
+            <section class="Recensioni_totali">
+                <h2 class="Info-Title">Tutte le recensioni</h2>
+                <div class="lista_recensioni" id="lista_recensioni"></div>
+
+
+            </section>
+
+
+            <!--Recensione-->
+            <section class="Recensione">
+                <h2 class="Info-Title">Lascia una recensione</h2>
+                <!--Input data-->
+                <i class="bi bi-calendar">
+                    <div class="form-group">
+                        <input class="calendar" type="date" id="dateStandard" name="dateStandard">
+                    </div>
+                </i>
+
+                <!--Stelle per il rating-->
+                <!-- Si noti che le stelle sono in ordine inverso -->
+                <div class="feedback-form row row_space">
+                    <div class="col-md-6">
+                        <!--Rating del Gusto-->
+                        <span class="feedback_name">Gusto </span>
+                        <div class="rating">
+                            <input type="radio" id="star5Taste" name="ratingTaste" value="5">
+                            <label for="star5Taste" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star4Taste" name="ratingTaste" value="4">
+                            <label for="star4Taste" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star3Taste" name="ratingTaste" value="3">
+                            <label for="star3Taste" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star2Taste" name="ratingTaste" value="2">
+                            <label for="star2Taste" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star1Taste" name="ratingTaste" value="1">
+                            <label for="star1Taste" class="ratingLabel">&#9733;</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <!--Rating della Difficoltà-->
+                        <span class="feedback_name">Difficoltà</span>
+                        <div class="rating">
+                            <input type="radio" id="star5Difficulty" name="ratingDifficulty" value="5">
+                            <label for="star5Difficulty" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star4Difficulty" name="ratingDifficulty" value="4">
+                            <label for="star4Difficulty" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star3Difficulty" name="ratingDifficulty" value="3">
+                            <label for="star3Difficulty" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star2Difficulty" name="ratingDifficulty" value="2">
+                            <label for="star2Difficulty" class="ratingLabel">&#9733;</label>
+                            <input type="radio" id="star1Difficulty" name="ratingDifficulty" value="1">
+                            <label for="star1Difficulty" class="ratingLabel">&#9733;</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn modify-button" type="button" id="btnAzzera">Azzera</button>
+
+
+                    </div>
+                </div>
+
+                <!-- Recensione Testo-->
+                <form id="feedbackForm">
+                    <div class="comment">
+                        <label for="comment" class="title_comment_area">Dicci di più:</label>
+                        <i class="bi bi-trash">
+                            <input type="checkbox" class="checkbox" id="checkbox" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-trash feedbackForm_trash" viewBox="0 0 16 16" id="feedbackForm_trash">
+                                <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                <path
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                        </i>
+                        <textarea id="comment" name="comment"></textarea>
+                    </div>
+                    <!--Bottone per inviare la recensione-->
+                    <button type="submit" class="submit-btn comment">Submit</button>
+                </form>
+            </section>
+
+
+
+            <!-- Nota Personale-->
+            <section class="Nota_personale">
+                <form id="Nota_personale">
+                    <h2 class="Info-Title">Nota personale</h2>
+
+                    <div class="comment">
+                        <label for="comment" class="title_comment_area">Scrivi qui la tua nota personale:</label>
+
+                        <i class="bi bi-trash">
+                            <input type="checkbox" class="checkbox" id="checkbox" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-trash personal_note_trash" viewBox="0 0 16 16" id="personal_note_trash">
+                                <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                <path
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                        </i>
+
+                        <textarea id="personal_note" name="personal_note"></textarea>
+                    </div>
+                    <!--Bottone per inviare la nota personale-->
+                    <button type="submit" class="submit-btn comment">Submit</button>
+
+                </form>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="bottom-container">
+            <p>Informazioni | Assistenza | Termini di Servizio | Privacy</p>
+        </div>
+    </footer>
+
+</body>
+
+<!--script per login-dropdown-menu in navbar-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+
+<script src="api.js"></script>
+<script src="navbar_login.js"></script>
+
+
+<!--Script per recuperare dati della ricetta-->
+<script>
+    var id = new URLSearchParams(window.location.search).get('id_ricetta');
+    const apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(ricetta => mostraRicetta(ricetta))
+        .catch(error => console.error("Si è verificato un errore durante la richiesta:", error))
+
+    //funzione per mostrare i dettagli della ricetta
+    function mostraRicetta(ricetta) {
+        if (!ricetta.meals || ricetta.meals.length === 0) {
+            console.error("No meal found");
+            return;
+        }
+        document.getElementById("card-img-top").src = ricetta.meals[0].strMealThumb;
+        document.getElementById("meal-title").innerHTML = ricetta.meals[0].strMeal;
+        document.getElementById("instructions").innerHTML = ricetta.meals[0].strInstructions;
+
+        const ingredients = [];
+        const meal = ricetta.meals[0];
+
+        //Cicla per trovare tutti gli ingredienti e le dosi
+        for (let i = 1; i <= 20; i++) {
+            const ingredient = meal[`strIngredient${i}`];
+            const measure = meal[`strMeasure${i}`];
+            // Log per vedere se gli ingredienti e le misure sono correttamente estratti
+
+            if (ingredient) {
+                ingredients.push(`${measure} ${ingredient}`);
+            }
+        }
+
+        const ingredientsList = document.querySelector('.list_ingredients');
+        ingredientsList.innerHTML = '';
+        ingredients.forEach(ingredient => {
+            const li = document.createElement('li');
+            li.textContent = ingredient;
+            ingredientsList.appendChild(li);
+        });
+
+        // Aggiunge l'area e la categoria della ricetta
+        document.getElementById("area").innerHTML = ricetta.meals[0].strArea;
+        document.getElementById("category").innerHTML = ricetta.meals[0].strCategory;
+        const link = ricetta.meals[0].strYoutube;
+        const videoLink = document.getElementById("video");
+
+
+        // Aggiunge un event listener per aprire il link in una nuova finestra
+        videoLink.addEventListener("click", function (event) {
+            event.preventDefault(); // Previene l'azione predefinita del link
+            window.open(link, "_blank", "width=100%");
+        });
+    }
+</script>
+
+<!--Script per gestire il login-->
+<script>
+    if (isLoggedIn) {
+        document.getElementById('login-button').textContent = 'Ciao ' + sessionStorage.getItem('username');
+        document.getElementById('dropdownMenuButton').style.display = '';
+    } else {
+        document.getElementById('login-button').textContent = 'Login';
+        dropdownMenuButton.style.display = 'none';
+    }
+
+    document.getElementById('logout-button').addEventListener('click', function (event) {
+        console.log('logout qui');
+        event.preventDefault();
+        if (isLoggedIn) {
+            logoutUser()
+        }
+    });
+</script>
+
+<!--Script per gestire il rating con le stelle-->
+<script src="star_rating.js"></script>
+
+<!--Script per gestire la data della recensione-->
+<script>
+    document.getElementById('dateStandard').addEventListener('change', function () {
+        const dateValue = this.value; // Ottieni il valore della data inserita
+        const idRicetta = new URLSearchParams(window.location.search).get('id_ricetta'); // ID della ricetta dall'URL
+
+        // Recupera gli utenti dal localStorage
+        const utenti = JSON.parse(localStorage.getItem('utenti'));
+
+        // Trova l'utente loggato
+        let utenteIndex = utenti.findIndex(user =>
+            (user.email === sessionStorage.getItem('email') && user.password === sessionStorage.getItem('password')) ||
+            (user.username === sessionStorage.getItem('username') && user.password === sessionStorage.getItem('password'))
+        );
+
+        // Se l'utente è stato trovato
+        if (utenteIndex !== -1) {
+            let utente = utenti[utenteIndex];
+
+            // Trova l'indice della recensione per la ricetta specifica
+            let recensioneIndex = utente.recensioni.findIndex(r => r.id_ricetta === idRicetta);
+
+            // Se la recensione esiste, aggiorna la data di creazione
+            if (recensioneIndex !== -1) {
+                // Aggiorna la data di creazione
+                utente.recensioni[recensioneIndex].data_creazione = dateValue;
+            } else {
+                // Se la recensione non esiste, creane una nuova
+                utente.recensioni.push({
+                    id_ricetta: idRicetta,
+                    data_creazione: dateValue,
+                    valutazione_gusto: { punteggio: null, ultima_modifica: null },
+                    valutazione_difficolta: { punteggio: null, ultima_modifica: null },
+                    testo_recensione: { testo: '', ultima_modifica: null }
+                });
+            }
+
+            // Salva nuovamente i dati utente in localStorage
+            localStorage.setItem('utenti', JSON.stringify(utenti));
+
+            // Mostra un messaggio di conferma nella console
+            console.log('Data di creazione salvata con successo:', dateValue);
+        } else {
+            alert('Per favore, effettua il login per utilizzare questa funzione.');
+        }
+    });
+</script>
+
+<!--Script per gestire le recensioni totali-->
+<script>
+    const lista_recensioni = document.getElementById('lista_recensioni');
+
+    var users = JSON.parse(localStorage.getItem('utenti')) || [];
+
+    function impostaValutazioni_totali(userId, ricettaId) {
+        const gustoRating = caricaValutazione(userId, ricettaId, 'gusto');
+        const difficoltaRating = caricaValutazione(userId, ricettaId, 'difficolta');
+        const commento = caricaValutazione(userId, ricettaId, 'commento');
+
+        //controlla se in quella recensione è presente solo la valutazione del gusto o solo la valutazione della difficoltà
+        if (gustoRating !== null) {
+            const inputElement = document.querySelector(`input[name="ratingTaste_totali"][value="${gustoRating}"]`);
+            if (inputElement !== null) {
+                inputElement.checked = true;
+            }
+        }
+
+        if (difficoltaRating !== null) {
+            const inputElement = document.querySelector(`input[name="ratingDifficulty"][value="${gustoRating}"]`);
+            if (inputElement !== null) {
+                inputElement.checked = true;
+            }
+        }
+    }
+
+
+    var existed = false;
+    for (i = 0; i < users.length; i++) {
+        for (j = 0; j < users[i].recensioni.length; j++) {
+            if (users[i].recensioni[j].id_ricetta === id) {
+                existed = true;
+                console.log('recensione:', users[i].recensioni[j].testo_recensione.testo);
+                var data;
+                //controlla se la data di creazione è presente
+                if(users[i].recensioni[j].data_creazione == null){
+                    //se non è presente la data della recensione, non scrive nulla
+                    data = "";
+                }else{
+                    data = users[i].recensioni[j].data_creazione;
+                }
+                const reviewDiv = document.createElement('div');
+                // Crea il contenuto per ogni slide
+                let rowContent = '<div class="container"><div class="row row_space">';
+
+                //controlla quali valutazioni sono presenti
+                //se non è presente nessuna valutazione
+                if (users[i].recensioni[j].valutazione_gusto.punteggio == null && users[i].recensioni[j].valutazione_difficolta.punteggio == null) {
+                    rowContent += `
+                            <div class="col-md-6" style="width:100%">
+                                <div class="card">
+                                   
+                                    <div class="card-body">
+                                         <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">${users[i].username}</h5>
+                                            <span class="text-muted">${data}</span>
+                                        </div>
+                                        <p class="card-text">${users[i].recensioni[j].testo_recensione.testo}</p>
+
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        `;
+
+                    rowContent += '</div>';
+
+                    let itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = rowContent;
+                    lista_recensioni.appendChild(itemDiv);
+                    //se è presente solo la valutazione del gusto
+                } else if (users[i].recensioni[j].valutazione_gusto.punteggio != null && users[i].recensioni[j].valutazione_difficolta.punteggio == null) {
+                    rowContent += `
+                            <div class="col-md-12">
+                                <div class="card">
+                                   
+                                    <div class="card-body">
+
+                                        
+                                        <!--<h5 class="card-title">${users[i].username}</h5>-->
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">${users[i].username}</h5>
+                                            <span class="text-muted">${data}</span>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <span class="feedback_name">Gusto</span>
+                                            <div class="rating_totale" >
+                                                <input type="radio" id="star5Difficulty" name="ratingTaste_totali" value="5" ${users[i].recensioni[j].valutazione_gusto.punteggio === '5' ? 'checked' : ''}>
+                                                <label for="star5Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '5' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star4Difficulty" name="ratingTaste_totali" value="4" ${users[i].recensioni[j].valutazione_gusto.punteggio === '4' ? 'checked' : ''}>
+                                                <label for="star4Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '4' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star3Difficulty" name="ratingTaste_totali" value="3" ${users[i].recensioni[j].valutazione_gusto.punteggio === '3' ? 'checked' : ''}>
+                                                <label for="star3Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '3' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star2Difficulty" name="ratingTaste_totali" value="2" ${users[i].recensioni[j].valutazione_gusto.punteggio === '2' ? 'checked' : ''}>
+                                                <label for="star2Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '2' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star1Difficulty" name="ratingTaste_totali" value="1" ${users[i].recensioni[j].valutazione_gusto.punteggio === '1' ? 'checked' : ''}>
+                                                <label for="star1Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '1' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                            </div>
+                                        </div>
+                                        <p class="card-text">${users[i].recensioni[j].testo_recensione.testo}</p>
+
+
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        `;
+
+                    rowContent += '</div>';
+
+                    let itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = rowContent;
+                    lista_recensioni.appendChild(itemDiv);
+                    //se è presente solo la valutazione della difficoltà
+                } else if (users[i].recensioni[j].valutazione_gusto.punteggio == null && users[i].recensioni[j].valutazione_difficolta.punteggio != null) {
+                    rowContent += `
+                            <div class="col-md-12">
+                                <div class="card">
+                                   
+                                    <div class="card-body ">
+                                        <!--<h5 class="card-title">${users[i].username}</h5>-->
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">${users[i].username}</h5>
+                                            <span class="text-muted">${data}</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="feedback_name">Difficoltà</span>
+                                            <div class="rating_totale">
+                                                <input type="radio" id="star5Difficulty" name="ratingDifficulty_totali" value="5" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '5' ? 'checked' : ''}>
+                                                <label for="star5Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '5' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star4Difficulty" name="ratingDifficulty_totali" value="4" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '4' ? 'checked' : ''}>
+                                                <label for="star4Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '4' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star3Difficulty" name="ratingDifficulty_totali" value="3" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '3' ? 'checked' : ''}>
+                                                <label for="star3Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '3' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star2Difficulty" name="ratingDifficulty_totali" value="2" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '2' ? 'checked' : ''}>
+                                                <label for="star2Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '2' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star1Difficulty" name="ratingDifficulty_totali" value="1" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '1' ? 'checked' : ''}>
+                                                <label for="star1Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '1' ? 'orange' : 'ddd'}">&#9733;</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="card-text">${users[i].recensioni[j].testo_recensione.testo}</p>
+
+                                    </div>
+                                   
+
+                                
+                            </div>
+                        `;
+
+                    rowContent += '</div>';
+
+                    let itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = rowContent;
+                    lista_recensioni.appendChild(itemDiv);
+                    //se entrambe le valutazioni sono presenti
+                } if (users[i].recensioni[j].valutazione_gusto.punteggio != null && users[i].recensioni[j].valutazione_difficolta.punteggio != null) {
+
+                    rowContent += `
+                            <div class="col-md-12">
+                                <div class="card">
+                                   
+                                    <div class="card-body">
+                                        
+                                        <!--<h5 class="card-title">${users[i].username}</h5>-->
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">${users[i].username}</h5>
+                                            <span class="text-muted">${data}</span>
+                                        </div>
+                                    
+                                        
+                                        <div class="col-md-6">
+                                            <span class="feedback_name">Gusto</span>
+                                            <div class="rating_totale">
+                                                <input type="radio" id="star5Difficulty" name="ratingTaste_totali" value="5" ${users[i].recensioni[j].valutazione_gusto.punteggio === '5' ? 'checked' : ''}>
+                                                <label for="star5Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '5' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star4Difficulty" name="ratingTaste_totali" value="4" ${users[i].recensioni[j].valutazione_gusto.punteggio === '4' ? 'checked' : ''}>
+                                                <label for="star4Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '4' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star3Difficulty" name="ratingTaste_totali" value="3" ${users[i].recensioni[j].valutazione_gusto.punteggio === '3' ? 'checked' : ''}>
+                                                <label for="star3Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '3' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star2Difficulty" name="ratingTaste_totali" value="2" ${users[i].recensioni[j].valutazione_gusto.punteggio === '2' ? 'checked' : ''}>
+                                                <label for="star2Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '2' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                                <input type="radio" id="star1Difficulty" name="ratingTaste_totali" value="1" ${users[i].recensioni[j].valutazione_gusto.punteggio === '1' ? 'checked' : ''}>
+                                                <label for="star1Difficulty" style="color: ${users[i].recensioni[j].valutazione_gusto.punteggio >= '1' ? 'orange' : '#ddd;'}">&#9733;</label>
+                                            </div>
+                                        </div>
+
+                                
+
+                                        <div class="col-md-6">
+                                            <span class="feedback_name">Difficoltà</span>
+                                            <div class="rating_totale">
+                                                <input type="radio" id="star5Difficulty" name="ratingDifficulty_totali" value="5" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '5' ? 'checked' : ''}>
+                                                <label for="star5Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '5' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star4Difficulty" name="ratingDifficulty_totali" value="4" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '4' ? 'checked' : ''}>
+                                                <label for="star4Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '4' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star3Difficulty" name="ratingDifficulty_totali" value="3" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '3' ? 'checked' : ''}>
+                                                <label for="star3Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '3' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star2Difficulty" name="ratingDifficulty_totali" value="2" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '2' ? 'checked' : ''}>
+                                                <label for="star2Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '2' ? 'orange' : 'ddd'}">&#9733;</label>
+                                                <input type="radio" id="star1Difficulty" name="ratingDifficulty_totali" value="1" ${users[i].recensioni[j].valutazione_difficolta.punteggio === '1' ? 'checked' : ''}>
+                                                <label for="star1Difficulty" style="color: ${users[i].recensioni[j].valutazione_difficolta.punteggio >= '1' ? 'orange' : 'ddd'}">&#9733;</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="card-text">${users[i].recensioni[j].testo_recensione.testo}</p>
+
+
+                                       
+                                    </div>
+                                   
+      
+                                </div>
+                            </div>
+
+                            
+                        `;
+
+                    rowContent += '</div>';
+
+                    let itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = rowContent;
+                    lista_recensioni.appendChild(itemDiv);
+                }
+
+
+            }
+
+        }
+
+    }
+
+    //se mon ci sono recensioni per quella ricetta
+    if (existed == false) {
+        const reviewDiv = document.createElement('div');
+        reviewDiv.textContent = 'Non ci sono recensioni per questa ricetta';
+        lista_recensioni.appendChild(reviewDiv);
+    }
+
+</script>
+
+<!--Script per gestire l'aggiunta della ricetta nel ricettario-->
+<script>
+    document.querySelector('input[name="liked_button"]').addEventListener('click', function () {
+        console.log("Hai cliccato il cuore: ");
+        let utenteIndex = utenti.findIndex(user =>
+            (user.email === sessionStorage.getItem('email') && user.password === sessionStorage.getItem('password')) ||
+            (user.username === sessionStorage.getItem('username') && user.password === sessionStorage.getItem('password'))
+        );
+        // Trova l'utente attuale
+        let utente = utenti[utenteIndex];
+
+        //se trova l'utente
+        if (utente !== undefined) {
+
+            // Trova l'indice del ricettario per la ricetta specifica
+            let ricettarioIndex = utente.ricettario.findIndex(r => r.id_ricetta === id);
+
+            // Se la ricetta non è presente nel ricettario, la aggiunge
+            if (ricettarioIndex === -1) {
+                ricettarioIndex = utente.ricettario.length; // Indice della nuova recensione
+
+
+                utente.ricettario.push({
+                    id_ricetta: id,
+                    dataAggiunta: new Date().toISOString() // Salva la data corrente
+                });
+
+                localStorage.setItem('utenti', JSON.stringify(utenti));
+            } else {
+                //se la ricetta è già presente nel ricettario, la rimuove
+                utente.ricettario.splice(ricettarioIndex, 1);
+                console.log('rimosso');
+                localStorage.setItem('utenti', JSON.stringify(utenti));
+            }
+
+            // Salva nuovamente i dati utente in localStorage
+            localStorage.setItem('utenti', JSON.stringify(utenti));
+            console.log('ricetta:', id, 'salvata nel ricettario di:', utente.username);
+        }
+
+    });
+
+
+
+    //controlla se il pulsante del cuore è stato cliccato
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkbox = document.getElementById('checkbox');
+        const heartPath = document.getElementById('heart');
+        const isRecipeLiked = checkIfRecipeIsLiked(); // Funzione che determina se la ricetta è già nel ricettario
+
+        // Imposta lo stato iniziale del checkbox e del cuore
+        checkbox.checked = isRecipeLiked;
+        if (isRecipeLiked) {
+            heartPath.classList.add('liked');
+        } else {
+            heartPath.classList.remove('liked');
+        }
+
+        // Aggiungi un listener per cambiare il colore del cuore quando viene cliccato
+        checkbox.addEventListener('change', function () {
+            if (sessionStorage.getItem('isLoggedIn', 'true')) {
+                if (checkbox.checked) {
+                    heartPath.classList.add('liked');
+                } else {
+                    heartPath.classList.remove('liked');
+                }
+            } else {
+                alert('Devi essere loggato per poter aggiungere una ricetta al ricettario');
+                return;
+            }
+        });
+
+    });
+
+
+    //funzione per controllare se la ricetta è già nel ricettario
+    function checkIfRecipeIsLiked() {
+        let utenteIndex = utenti.findIndex(user =>
+            (user.email === sessionStorage.getItem('email') && user.password === sessionStorage.getItem('password')) ||
+            (user.username === sessionStorage.getItem('username') && user.password === sessionStorage.getItem('password'))
+        );
+        // Trova l'utente attuale
+        let utente = utenti[utenteIndex];
+        if (utente !== undefined) {
+            // Trova l'indice del ricettario per la ricetta specifica
+            let ricettarioIndex = utente.ricettario.findIndex(r => r.id_ricetta === id);
+
+            // Se la recensione non esiste, creane una nuova
+            if (ricettarioIndex === -1) {
+                return false;
+            } else {
+                return true;
+
+            }
+        }
+    }
+
+</script>
+
+<!--Script per disabilitare le funzioni interattive se l'utente non è loggato-->
+<script>
+    function init() {
+        if (!isLoggedIn) {
+            document.querySelectorAll('input[name="liked_button"], .heart_button, input[name="ratingTaste"], .ratingLabel , input[name="ratingDifficulty"], .comment, .personal_note').forEach(element => {
+                element.disabled = true;
+                element.addEventListener('click', function () {
+                    alert('Per favore, effettua il login per utilizzare questa funzione.');
+                });
+            });
+        }
+    }
+
+    // Inizializza la funzione al caricamento della pagina
+    document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</html>

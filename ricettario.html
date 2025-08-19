@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Il tuo profilo | All You Can Cook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <link rel="stylesheet" href="heart.css">
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        .btn-primary {
+            --bs-btn-color: #212529;
+            --bs-btn-bg: #f8f9fa;
+            --bs-btn-border-color: #f8f9fa;
+        }
+
+        .Profilo {
+            padding: 35px 0 5px 0;
+            margin-top: 20px;
+            border: 1.5px solid black;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .modify-button {
+            float: right;
+            margin-right: 30px;
+            width: 100px;
+
+            --bs-btn-color: white;
+            --bs-btn-bg: #398378;
+            --bs-btn-border-color: #398378;
+            --bs-btn-hover-color: #398378;
+            --bs-btn-hover-bg: white;
+            --bs-btn-hover-border-color: #398378;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #398378;
+            --bs-btn-active-bg: #398378;
+            --bs-btn-active-border-color: #398378;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #398378;
+            --bs-btn-disabled-bg: #398378;
+            --bs-btn-disabled-border-color: #398378;
+        }
+
+        .container-profile {
+            text-align: left;
+            margin-left: 15px;
+            font-size: 20px;
+            max-width: 1100px;
+        }
+
+        .Title {
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        .row {
+            margin-bottom: 50px;
+        }
+
+
+
+        .Ricettario {
+            padding: 30px 0;
+        }
+
+        .Ricettario .row {
+            margin-bottom: 30px;
+        }
+
+        /*cuore in alto a destra in ogni card*/
+        .position-relative {
+            position: relative;
+        }
+
+        .scopri-piu {
+            --bs-btn-color: white;
+            --bs-btn-bg: #398378;
+            --bs-btn-border-color: #398378;
+            --bs-btn-hover-color: #398378;
+            --bs-btn-hover-bg: white;
+            --bs-btn-hover-border-color: #398378;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #398378;
+            --bs-btn-active-bg: #398378;
+            --bs-btn-active-border-color: #398378;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #398378;
+            --bs-btn-disabled-bg: #398378;
+            --bs-btn-disabled-border-color: #398378;
+            margin-left: 150px;
+        }
+
+        .checkbox {
+            display: none;
+            /* Nascondi l'input checkbox */
+        }
+
+        .heartbox label {
+            cursor: pointer;
+        }
+
+        #heart-svg {
+            width: 58px;
+            height: 57px;
+        }
+
+        #heart-svg #heart {
+            transition: fill 0.3s ease;
+        }
+
+        #heart-svg #heart.liked {
+            fill: #E2264D;
+            /* Colore rosso per il cuore "preferito" */
+        }
+
+        .heart_button {
+            border-radius: 0px 0px 0px 10px;
+            float: right;
+            --bs-btn-color: white;
+            --bs-btn-bg: #398378;
+            --bs-btn-border-color: #398378;
+            --bs-btn-hover-color: #398378;
+            --bs-btn-hover-bg: white;
+            --bs-btn-hover-border-color: #398378;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #398378;
+            --bs-btn-active-bg: #398378;
+            --bs-btn-active-border-color: #398378;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #398378;
+            --bs-btn-disabled-bg: #398378;
+            --bs-btn-disabled-border-color: #398378;
+        }
+
+        .heart_button label {
+            cursor: pointer;
+
+        }
+
+        .heart_button {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            /* Garantisce che il bottone sia sopra gli altri contenuti */
+            z-index: 10;
+            background-color: #f8f9fa;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1100px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            /* Così facendo, le colonne si adatteranno automaticamente su più righe */
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            /* Imposta l'altezza della card per occupare tutto lo spazio disponibile */
+        }
+
+        .card-body {
+            flex-grow: 1;
+            /* Fa in modo che il contenuto della card occupi lo spazio rimanente */
+        }
+    </style>
+
+    <!--Script per controllo dello stato del login-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (sessionStorage.getItem('isLoggedIn') === 'true') {
+                // Aggiungi una classe che attiva le animazioni
+                document.body.classList.add('user-logged-in');
+            }
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar-homepage">
+        <div class="header-container">
+            <!--Logo-->
+            <a href="index.html">
+                <img src="logo-no-background.svg" alt="Logo" class="logo-img" id="logo">
+            </a>
+            <!--Barra di ricerca-->
+            <div class="search-bar-container">
+                <form class="d-flex" role="search" onsubmit="return cerca()">
+                    <input class="form-control search-input" type="search" id="query" placeholder="Search"
+                        aria-label="Cerca">
+                    <button class="btn btn-outline-success search-button" type="submit">Search</button>
+                </form>
+            </div>
+
+            <!--script per gestire login-->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Associa l'evento click alla funzione check_login
+                    document.getElementById('login-button').addEventListener('click', function () {
+                        check_login(); // Verifica se l'utente è loggato al clic del pulsante
+                    });
+                });
+            </script>
+
+            <!--DropDown Login-->
+            <div class="nav-item dropdown">
+                <button class="btn btn-primary login-button" id="login-button" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Login</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="display: none;"
+                    id="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="index.html">Home</a></li>
+                    <li><a class="dropdown-item" href="ricettario.html">Profilo</a></li>
+                    <li><a class="dropdown-item" href="Recensioni.html">Recensioni</a></li>
+                    <li><a class="dropdown-item" href="personal_note.html">Note Personali</a></li>
+                    <li><button class="btn dropdown-item" id="logout-button" type="button">Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main>
+        <section class="Profilo_section">
+            <div class="container text-center">
+                <div class="Profilo">
+                    <div class="row" style="text-align: left; margin-left: 1%;">
+                        <div class="col-md-6">
+                            <h2 class="Title-Profile">Il tuo Profilo</h2>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="gestisci_account.html"><button class="btn modify-button"
+                                    type="button">Modifica</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: left; margin-left: 1%;">
+                        <div class="col-md-6">
+                            <span id="Username"> </span>
+                        </div>
+                        <div class="col-md-6">
+                            <span id="Email"> </span>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: left; margin-left: 1%;">
+                        <div class="col-md-6">
+                            <span id="Counter_favourite_meals"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="Ricettario">
+            <div class="container">
+                <h2 class="Title">Il tuo Ricettario</h2>
+                <div class="container text-center">
+                    <div class="row" id="ricettario"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="bottom-container">
+            <p>Informazioni | Assistenza | Termini di Servizio | Privacy</p>
+        </div>
+    </footer>
+
+    <!--script per login-dropdown-menu in navbar-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    <script src="ricettario.js"></script>
+    <script src="signup.js"></script>
+    <script src="navbar_login.js"></script>
+    <script src="api.js"></script>
+
+    <!--Script per gestire informazioni ricettario-->
+    <script>
+        // Recupero degli utenti dal localStorage
+        const users = JSON.parse(localStorage.getItem('utenti'));
+
+        const user = users.find(user =>
+            (user.email === sessionStorage.getItem('email') && user.password === sessionStorage.getItem('password'))
+            || (user.username === sessionStorage.getItem('username') && user.password === sessionStorage.getItem('password'))
+        );
+
+
+        document.getElementById('Username').textContent = 'Username: ' + user.username;
+        document.getElementById('Email').textContent = 'Email: ' + user.email;
+
+        // recupera il numero di ricette preferite
+        const Counter_favourite_meals = user.ricettario.length;
+        console.log(Counter_favourite_meals);
+        document.getElementById('Counter_favourite_meals').textContent = 'Ricette preferite: ' + Counter_favourite_meals;
+    </script>
+
+
+
+</body>
+
+</html>

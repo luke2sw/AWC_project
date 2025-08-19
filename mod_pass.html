@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modifica la password del tuo account | All You Can Cook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main2.css">
+    <link rel="stylesheet" href="footer.css">
+    
+    <style>
+        .Form-login {
+            display: flex;
+            justify-content: center;
+            /* align-items: center;*/
+            height: 335px;
+        }
+
+        .Form-login .mb-3 {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .Password {
+            margin-top: 20px;
+        }
+
+        .Login {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            width: 300px;
+        }
+
+        .Suggests p {
+            /* Riduci il margine superiore */
+            margin-top: 5px;
+            /* Riduci il margine inferiore */
+            margin-bottom: 5px;
+        }
+
+        .Suggests {
+            color: rgb(156, 156, 156);
+            font-size: 15px;
+        }
+
+        /* Stile normale per il testo degli span */
+        .text-normal {
+            color: initial;
+        }
+
+        /* Stile per il testo degli span in caso di errore */
+        .text-error {
+            color: red;
+        }
+
+        .error-message-account {
+            position: relative;
+            color: red;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .username-error-message {
+            position: relative;
+            color: red;
+            font-size: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .password-error-message {
+            position: relative;
+            color: red;
+            font-size: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Register-Button-Container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .Register-Button {
+            font-size: 16px;
+            margin-left: 5px;
+            /* Spazio tra l'icona e il testo */
+            text-decoration: none;
+            color: rgb(202, 0, 0);
+            font-weight: bold;
+        }
+
+        .Register-Button p {
+            /* Rimuovi il margine predefinito del paragrafo */
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+
+    <script src="signup.js"></script>
+</head>
+
+<body>
+
+    <div class="header-container">
+        <a href="index.html">
+            <img src="logo-no-background.svg" alt="Logo" class="logo-img" id="logo">
+
+        </a>
+        <a href="#" class="assist-link">Feedback e assistenza</a>
+    </div>
+
+    <main>
+        <div class="login-title">
+            <h2><strong>Cambia la password del tuo account</strong></h2>
+        </div>
+
+        <div class="login-subtitle">
+            <p>Sostituisci la tua vecchia password con una nuova</p>
+        </div>
+
+        <section class="Form-login" style="margin-bottom: 5%;">
+            <form id="Form-login">
+                <!--Input Email or Username-->
+                <div class="mb-3 Email_or_Username">
+                    <input type="email_or_username" class="form-control" id="InputEmail_or_Username"
+                        aria-describedby="email_or_UsernameHelp" placeholder="Email address or Username">
+                    <!--div per mostrare messaggio di errore nel caso username non rispetti i requisiti -->
+                    <div id="username-error" class="username-error-message" style="display: none;"></div>
+                </div>
+                <!--Input Password Vecchia-->
+                <div class="mb-3 Password">
+                    <input type="password" class="form-control" id="InputPasswordVecchia"
+                        placeholder="Vecchia Password">
+                </div>
+                <!--Input Password Nuova-->
+                <div class="mb-3 Password">
+                    <input type="password" class="form-control" id="InputPasswordNuova" placeholder="Nuova Password">
+                    <!--div per mostrare messaggio di errore nel caso password non rispetti i requisiti-->
+                    <div id="password-error" class="password-error-message" style="display: none;"></div>
+                    <!--Suggerimenti per la creazione di una nuova password-->
+                    <div class="Suggests">
+                        <p>
+                            <span id="NumChar">Utilizza almeno 8 caratteri,</span>
+                            <span> di cui: </span>
+                        </p>
+                        <p>
+                            <span id="UpperChar" class="error-message">Uno maiuscolo,</span>
+                            <span id="LowerChar" class="error-message">uno minuscolo</span>
+                            <span>e </span>
+                            <span id="DigitChar" class="error-message">un numero.</span>
+                        </p>
+                        <p>
+                            <span id="SpecialChar">Utilizza almeno uno dei simboli speciali: ?, !, # </span>
+                        </p>
+                    </div>
+
+                    <div id="account-error" class="error-message-account" style="display: none;"></div>
+                    <div id="registration-message" class="registration-message-account" style="display: none;"></div>
+                </div>
+
+                <div id="account-error" class="error-message-account" style="display: none;"></div>
+                <!--Bottone per confermare il cambio di password-->
+                <button type="button" class="btn btn-primary" onclick="cambia_pass()">Cambia Password</button>
+            </form>
+        </section>
+    </main>
+
+
+
+
+    <footer>
+        <div class="bottom-container">
+            <p>Informazioni | Assistenza | Termini di Servizio | Privacy</p>
+        </div>
+    </footer>
+
+    <script src="signup.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
